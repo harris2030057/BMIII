@@ -38,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight / (height * height);
+        if(bmi<20){
+            new AlertDialog.Builder(this)
+                    .setMessage("Your Bmi is"+bmi+"請多吃點")
+                    .setTitle("結果")
+                    .setPositiveButton("OK",null)
+                    .show();
+        }else{
+
+
+
         new AlertDialog.Builder(this)
                 .setMessage(getString(R.string.your_bmi_is)+ bmi)
                 .setTitle(R.string.my_title)
@@ -48,4 +58,4 @@ public class MainActivity extends AppCompatActivity {
        /* Log.d("MainActivity", "Your Bmi is"+String.valueOf(bmi));
         Toast.makeText(this, "Your BMI is "+ bmi, Toast.LENGTH_SHORT).show();*/
     }
-}
+}}
